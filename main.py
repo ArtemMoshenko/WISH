@@ -1,5 +1,4 @@
-from flask import Flask
-from flask import render_template
+from flask import Flask, request, render_template
 
 application = Flask(__name__)
 
@@ -17,7 +16,7 @@ def onboarding():
 
 
 # авторизация (номер телефона/сервисы)
-@application.route('/auth')
+@application.route('/auth', methods='[POST]')
 def auth():
     return render_template("auth.html")
 
